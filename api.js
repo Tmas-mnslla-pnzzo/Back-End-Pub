@@ -1,23 +1,11 @@
 require('dotenv').config()
-
 const mysql = require('mysql2')
 const express = require('express')
 const cors = require('cors')
 const port = 3002
 
-
-
 const app = express();
 app.use(cors());
-
-
-//const connection = mysql.createConnection(process.env.DATABASE_URL)
-//console.log('Connected!')
-//connection.query('CREATE TABLE myProjects (name VARCHAR(255), description VARCHAR(1000), src VARCHAR(1000));');
-//connection.query('INSERT INTO users2 (mail, pass) VALUES ("tomasmansilla","control");');
-//connection.query('select * from users2;', function (err, result, fields){console.log(result)}); 
-//console.log('Disconnected.')
-//connection.end()
 
 function agregarUser(mail,pass){
     const connection = mysql.createConnection(process.env.DATABASE_URL)
@@ -297,33 +285,10 @@ function expPri(n1,n2,e){
     return d[0]/e
 }
 
-//console.log(f)
-let a=toString(ciff_rsa('tomasmansillapz@gmail.com',13,31,7))
-let b=toString(ciff_rsa("Controldexbox1",13,31,7))
-//validarUser(a,b)
-
-
-
-//app.get('/', (req, res) => {
-//    res.send(b+'<br>'+a)
-//})
-  
-//app.listen(port, () => {
-//    console.log(`Example app listening on port ${port}`)
-//})
-  
-
-//agregarUser(a,b)
-
 module.exports={
     "ciff":ciff_rsa
 }
 
-//subirCosas('hola a todos','myPerInfo','description')
-
-//subirCosas('hola a todos','myPerInfo','description')
-
-  
 const connection = mysql.createConnection(process.env.DATABASE_URL)
 console.log('Connected!')
 q="SELECT * FROM users";
